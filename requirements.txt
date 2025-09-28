@@ -1,0 +1,33 @@
+# Core ML dependencies
+torch
+torchvision
+diffusers==0.34.0
+transformers
+accelerate
+safetensors
+
+# Image processing and 360° utilities
+pillow
+opencv-python
+py360convert
+einops
+numpy
+
+# Training and experiment tracking
+wandb
+omegaconf
+hydra-core
+
+# Hugging Face Hub integration
+huggingface_hub
+
+# Utility packages
+filetype
+
+# Development tools (optional)
+black
+flake8
+isort
+
+# Local package installation
+-e .

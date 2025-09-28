@@ -1,0 +1,45 @@
+# Disable Hydra’s default logging if desired
+defaults:
+  - override hydra/job_logging: disabled
+  - override hydra/hydra_logging: disabled
+
+# Config name
+name: "training-run"
+
+# Training parameters
+training:
+  seed: 42
+  epochs: 150
+  batch_size: 64 #Global
+  per_gpu_batch_size: 4 #Per GPU
+  learning_rate: 8e-5
+  betas: [0.9, 0.999]
+  eps: 1e-8
+  warmup_steps: 10000 # Warmup steps until constant lr specified by learning_rate
+  num_workers: 4
+  num_gpus: 8 #Number of GPUs
+  use_checkpointing: false
+  mixed_precision: "fp16" #Options: "fp16", "bf16"
+  checkpoint_interval_type: "steps"
+  checkpoint_interval: 2500 #Checkpoint interval in steps
+  validation_interval: 2500 #Validation interval in steps
+  prediction_type: "epsilon" #Options: "epsilon", "v_prediction"
+  type: "image_only"  # Options: "multitext", "single_caption", "image_only"
+  resume_checkpoint: false
+  resume_checkpoint_filename: ""
+
+# Model & Data parameters
+model:
+  id: "sd-legacy/stable-diffusion-v1-5"
+  image_size: 512
+
+# Checkpoint and logging directories (Will be overridden by CLI)
+directories:
+  checkpoint_dir: ""
+  data_dir: ""
+  cache_dir: ""
+
+# Wandb
+wandb:
+  entity_name: "hanqiulicai-eth-z-rich"
+  project_name: "cubediff-training"
