@@ -78,10 +78,10 @@ The prompts can be provided in three different formats depending on the model:
 #### Available Pre-trained Models
 
 | Model | Hugging Face ID | Description |
-|-------|----------------|-------------|
-| Image-only | `hlicai/cubediff-512-imgonly` | Generates panoramas without text conditioning |
-| Single Caption | `hlicai/cubediff-512-singlecaption` | Uses one prompt for all cube faces |
-| Multi-text | `hlicai/cubediff-512-multitxt` | Different prompts for each cube face |
+|------|------------------|-------------|
+| Image-only | [hlicai/cubediff-512-imgonly](https://huggingface.co/hlicai/cubediff-512-imgonly) | Generates panoramas without text conditioning |
+| Single Caption | [hlicai/cubediff-512-singlecaption](https://huggingface.co/hlicai/cubediff-512-singlecaption) | Uses one prompt for all cube faces |
+| Multi-text | [hlicai/cubediff-512-multitxt](https://huggingface.co/hlicai/cubediff-512-multitxt) | Different prompts for each cube face |
 
 #### Example Usage
 
@@ -142,7 +142,6 @@ accelerate launch train.py --config my_config
 ├── README.md                   <- Project documentation  
 ├── requirements.txt            <- Python dependencies
 ├── inference.py                <- Main inference script
-├── push_to_hub.py             <- Script to deploy models to Hugging Face Hub
 ├── train.py                   <- Main training script
 │
 ├── ckpts/                     <- Local model checkpoints
